@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     public void Update()
     {
-        if(Time.time > bornTick + lifetime)
+        if (Time.time > bornTick + lifetime)
         {
             Destroy(gameObject);
         }
@@ -26,5 +26,10 @@ public class Bullet : MonoBehaviour
     public void Shoot(Vector3 direction, float force)
     {
         rigidbody.AddForce(direction * force, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }

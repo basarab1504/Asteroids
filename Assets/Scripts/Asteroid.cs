@@ -19,4 +19,9 @@ public class Asteroid : MonoBehaviour
     {
         rigidbody.MovePosition(transform.position + direction * speed * Time.deltaTime);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }

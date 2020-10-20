@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : MonoBehaviour
+public class Turret : MonoBehaviour
 {
     private float lastCooldownTick;
     [SerializeField]
