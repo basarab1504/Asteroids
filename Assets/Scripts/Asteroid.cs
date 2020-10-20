@@ -9,10 +9,10 @@ public class Asteroid : MonoBehaviour
     [SerializeField]
     private float speed = 10;
 
-    private void Start()
+    private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        direction = (Vector3.zero - transform.position).normalized;
+        // direction = (Vector3.zero - transform.position).normalized;
     }
 
     public void Update()
@@ -23,5 +23,17 @@ public class Asteroid : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+    }
+
+    public void Push(Vector2 direction)
+    {
+        this.direction = direction;
+    }
+
+    public void PushRandom()
+    {
+        var x = Random.Range(0f, 1f) > 0.5f ? -1f : 1f;
+        var y = Random.Range(0f, 1f) > 0.5f ? -1f : 1f;
+        direction = new Vector2(x, y);
     }
 }

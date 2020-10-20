@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     private Vector2 areaSize;
     [SerializeField]
-    private GameObject asteroidPrefab;
+    private Asteroid asteroidPrefab;
 
     public void Update()
     {
@@ -23,7 +23,8 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(asteroidPrefab, GetPosition(), Quaternion.identity);
+        var a = Instantiate(asteroidPrefab, GetPosition(), Quaternion.identity);
+        a.PushRandom();
     }
 
     private Vector2 GetPosition()

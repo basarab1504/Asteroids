@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7878505382296294678}
   - component: {fileID: 7878505382296294681}
-  - component: {fileID: 7878505382296294680}
   - component: {fileID: 7878505382296294679}
   - component: {fileID: 7878505382296294676}
+  - component: {fileID: 7878505382296294680}
   - component: {fileID: 7878505382296294677}
-  m_Layer: 0
+  - component: {fileID: -6411337155453506275}
+  m_Layer: 8
   m_Name: Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4834f235f5358f94a8a0ce8d0b698a71, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6132076, g: 0.3703536, b: 0.12437701, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7878505382296294680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7878505382296294683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ede52f8d01cb9d4fa61e986ef647648, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &7878505382296294679
 Rigidbody2D:
   serializedVersion: 4
@@ -134,6 +123,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7878505382296294680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878505382296294683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ede52f8d01cb9d4fa61e986ef647648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!114 &7878505382296294677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,3 +148,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f94fce99ac5f54ab9de11d8bbb3c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6411337155453506275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878505382296294683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91b5ab3a96864a42866837deb9ddeb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefab: {fileID: 2362017755783688692, guid: 11e810d0c48bfbe41927de8a68f8f1d2,
+    type: 3}
+  countToSpawn: 3

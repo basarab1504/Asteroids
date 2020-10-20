@@ -23,13 +23,10 @@ public class Ship : MonoBehaviour
             rigidbody.MoveRotation(rigidbody.rotation + rotationSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.RightArrow))
             rigidbody.MoveRotation(rigidbody.rotation - rotationSpeed * Time.deltaTime);
-        // if (transform.position.x > maxBoundX)
-        //     transform.position = new Vector3(minBoundX, transform.position.y, 0);
-        // else if (transform.position.x < minBoundX)
-        //     transform.position = new Vector3(maxBoundX, transform.position.y, 0);
-        // else if (transform.position.y > maxBoundY)
-        //     transform.position = new Vector3(transform.position.x, minBoundY, 0);
-        // else if (transform.position.y < minBoundY)
-        //     transform.position = new Vector3(transform.position.x, maxBoundY, 0);
     }
+
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Destroy(gameObject);
+    // }
 }
