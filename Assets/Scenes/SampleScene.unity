@@ -121,6 +121,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &503183061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503183062}
+  - component: {fileID: 503183063}
+  m_Layer: 0
+  m_Name: Turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503183062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503183061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 932707128}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &503183063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503183061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfbcd0b5ea6b2f4fb8408dbaa0ba589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 3
+  capacity: 6
+  laserForce: 5
+  bulletPrefab: {fileID: 1084287647570182018, guid: 84bfb36d87a4366408864f33fbac2d42,
+    type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,8 +295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d79dae344c4cf3946b610a430fda1fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 5
   areaSize: {x: 5, y: 5}
-  prefab: {fileID: 7878505382296294683, guid: 81ff25adebb818245aad13947a5d0c88, type: 3}
+  asteroidPrefab: {fileID: 7878505382296294683, guid: 81ff25adebb818245aad13947a5d0c88,
+    type: 3}
 --- !u!1 &650799386
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &932707125
 Rigidbody2D:
   serializedVersion: 4
@@ -411,10 +461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da6b7a94a55d1743afad502787666e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBoundX: 6
-  maxBoundY: 5
-  minBoundX: -6
-  minBoundY: -5
   speed: 5
   rotationSpeed: 500
 --- !u!212 &932707127
@@ -477,7 +523,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 503183062}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
