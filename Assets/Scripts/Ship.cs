@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Ship : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Ship : MonoBehaviour
     private float speed;
     [SerializeField]
     private float rotationSpeed;
+    public UnityEvent ShipExploded;
 
     void Start()
     {
@@ -25,8 +27,9 @@ public class Ship : MonoBehaviour
             rigidbody.MoveRotation(rigidbody.rotation - rotationSpeed * Time.deltaTime);
     }
 
-    // void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     Destroy(gameObject);
-    // }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+        ShipExploded.Invoke();
+    }
 }

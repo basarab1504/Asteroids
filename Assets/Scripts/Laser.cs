@@ -12,6 +12,8 @@ public class Laser : MonoBehaviour
     private float laserShotsCount;
     [SerializeField]
     private float laserDistance;
+    [SerializeField]
+    private LaserShot laserAmmoPrefab;
     private Queue<float> laserShotTicks;
 
     private void Start()
@@ -22,7 +24,7 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.RightControl))
             Shoot();
 
         if (laserShotsCount < capacity)
@@ -39,11 +41,8 @@ public class Laser : MonoBehaviour
     {
         if (laserShotsCount > 0)
         {
-            Debug.DrawRay(transform.position, transform.up * laserDistance, Color.red, 1);
-            List<RaycastHit2D> hits = new List<RaycastHit2D>();
-            int results = Physics2D.Raycast(transform.position, transform.up, new ContactFilter2D(), hits, laserDistance);
-            foreach (var a in hits)
-                Destroy(a.collider.gameObject);
+            var laserShot = Instantiate(laserAmmoPrefab, transform.position, Quaternion.identity);
+            laserShot.Shoot(transform.up.normalized, laserDistance);
             laserShotsCount--;
             laserShotTicks.Enqueue(Time.time);
         }
