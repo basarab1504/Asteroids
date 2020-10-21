@@ -20,11 +20,11 @@ public class Ship : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow))
-            rigidbody.MovePosition(transform.position + transform.up * speed * Time.deltaTime);
+            rigidbody.AddForce(transform.up * speed);
         if (Input.GetKey(KeyCode.LeftArrow))
-            rigidbody.MoveRotation(rigidbody.rotation + rotationSpeed * Time.deltaTime);
+            rigidbody.MoveRotation(rigidbody.rotation + rotationSpeed);
         if (Input.GetKey(KeyCode.RightArrow))
-            rigidbody.MoveRotation(rigidbody.rotation - rotationSpeed * Time.deltaTime);
+            rigidbody.MoveRotation(rigidbody.rotation - rotationSpeed);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
