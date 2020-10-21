@@ -4,22 +4,48 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    private float lastCooldownTick;
+    [SerializeField]
+    private float cooldown;
+    [SerializeField]
+    private float capacity;
+    private float laserShotsCount;
+    [SerializeField]
+    private float laserDistance;
+    private Queue<float> laserShotTicks;
 
+    private void Start()
+    {
+        laserShotsCount = capacity;
+        laserShotTicks = new Queue<float>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
+            Shoot();
+
+        if (laserShotsCount < capacity)
         {
-            Debug.DrawRay(transform.position, transform.up * 5, Color.red, 3);
+            if (Time.time > laserShotTicks.Peek() + cooldown)
+            {
+                laserShotsCount++;
+                laserShotTicks.Dequeue();
+            }
+        }
+    }
+
+    void Shoot()
+    {
+        if (laserShotsCount > 0)
+        {
+            Debug.DrawRay(transform.position, transform.up * laserDistance, Color.red, 1);
             List<RaycastHit2D> hits = new List<RaycastHit2D>();
-            int results = Physics2D.Raycast(transform.position, transform.up, new ContactFilter2D(), hits, 5);
+            int results = Physics2D.Raycast(transform.position, transform.up, new ContactFilter2D(), hits, laserDistance);
             foreach (var a in hits)
                 Destroy(a.collider.gameObject);
+            laserShotsCount--;
+            laserShotTicks.Enqueue(Time.time);
         }
     }
 }

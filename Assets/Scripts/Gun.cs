@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : MonoBehaviour
+public class Gun : MonoBehaviour
 {
     private float lastCooldownTick;
     [SerializeField]
@@ -11,7 +11,7 @@ public class Turret : MonoBehaviour
     private float capacity;
     private float bulletCount;
     [SerializeField]
-    private float turretForce;
+    private float gunForce;
     [SerializeField]
     private Bullet bulletPrefab;
     private Queue<float> bulletsShotTicks;
@@ -42,7 +42,7 @@ public class Turret : MonoBehaviour
         if (bulletCount > 0)
         {
             var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.Shoot(transform.up.normalized, turretForce);
+            bullet.Shoot(transform.up.normalized, gunForce);
             bulletCount--;
             bulletsShotTicks.Enqueue(Time.time);
         }
