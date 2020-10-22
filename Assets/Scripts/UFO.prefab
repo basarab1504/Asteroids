@@ -211,3 +211,5 @@ MonoBehaviour:
   rotationSpeed: 5
   control: {fileID: 11400000, guid: f7d02a655978a3d4abf7807a4096ca2b, type: 2}
   gun: {fileID: 8766119184712452027}
+  visibilityRange: 100
+  visibilityAngle: 30

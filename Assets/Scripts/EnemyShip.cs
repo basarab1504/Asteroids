@@ -12,6 +12,12 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
     private InputControl control;
     [SerializeField]
     private Gun gun;
+    [SerializeField]
+    private float visibilityAngle;
+    [SerializeField]
+    private float visibilityRadius;
+    [SerializeField]
+    private float keepDistance;
     private Rigidbody2D rigidbody;
 
 
@@ -38,15 +44,15 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
 
         control.commands.Add(new Command(() =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, 100);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
             var dir = hit.transform.position - transform.position;
             Move(dir.normalized * speed);
         },
         () =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, 100);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
             if (hit != null)
-                return (hit.transform.position - transform.position).magnitude > 3;
+                return (hit.transform.position - transform.position).magnitude > keepDistance;
             return hit != null;
         }));
 
@@ -56,15 +62,15 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
         },
         () =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, 100);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
             if (hit != null)
-                return (hit.transform.position - transform.position).magnitude > 3;
+                return (hit.transform.position - transform.position).magnitude > keepDistance;
             return hit != null;
         }));
 
         control.commands.Add(new Command(() =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, 100);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
             if (Vector3.SignedAngle(transform.up, hit.transform.position - transform.position, Vector3.forward) < 0)
                 Rotate(rigidbody.rotation - rotationSpeed);
             else
@@ -72,11 +78,10 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
         },
         () =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, 100);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
             if (hit != null)
             {
-                var a = Vector3.Angle(transform.up, hit.transform.position - transform.position);
-                return a >= 10f;
+                return Vector3.Angle(transform.up, hit.transform.position - transform.position) >= visibilityAngle;
             }
             return false;
         }));
