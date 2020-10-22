@@ -9,42 +9,44 @@ public class Gun : MonoBehaviour
     private float cooldown;
     [SerializeField]
     private float capacity;
-    private float bulletCount;
+    private float ammoCount;
     [SerializeField]
     private float gunForce;
     [SerializeField]
-    private Bullet bulletPrefab;
-    private Queue<float> bulletsShotTicks;
+    private Ammo ammoPrefab;
+    private Queue<float> ammosShotTicks;
+
+    public void Shoot()
+    {
+        if (ammoCount > 0)
+        {
+            var ammo = Instantiate(ammoPrefab, transform.position, Quaternion.identity);
+            ammo.Shoot(transform.up.normalized, gunForce);
+            ammoCount--;
+            ammosShotTicks.Enqueue(Time.time);
+        }
+    }
 
     private void Start()
     {
-        bulletCount = capacity;
-        bulletsShotTicks = new Queue<float>();
+        ammoCount = capacity;
+        ammosShotTicks = new Queue<float>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Shoot();
-
-        if (bulletCount < capacity)
-        {
-            if (Time.time > bulletsShotTicks.Peek() + cooldown)
-            {
-                bulletCount++;
-                bulletsShotTicks.Dequeue();
-            }
-        }
+        AmmoRestoring();
     }
 
-    void Shoot()
+    private void AmmoRestoring()
     {
-        if (bulletCount > 0)
+        if (ammoCount < capacity)
         {
-            var bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.Shoot(transform.up.normalized, gunForce);
-            bulletCount--;
-            bulletsShotTicks.Enqueue(Time.time);
+            if (Time.time > ammosShotTicks.Peek() + cooldown)
+            {
+                ammoCount++;
+                ammosShotTicks.Dequeue();
+            }
         }
     }
 }

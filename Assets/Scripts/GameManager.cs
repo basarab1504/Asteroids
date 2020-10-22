@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public Ship SpawnShip()
     {
         var ship = Instantiate(playerShipPrefab, shipSpawnPosition, Quaternion.identity);
-        ship.ShipExploded.AddListener(OnShipExploded);
+        // ship.ShipExploded.AddListener(OnShipExploded);
         return ship;
     }
 }
