@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 1457967956547212823}
   - component: {fileID: 1457967956547212820}
   - component: {fileID: -3952058435369050827}
+  - component: {fileID: -2936862871779645272}
   m_Layer: 10
   m_Name: Ship
   m_TagString: Untagged
@@ -78,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 1457967956547212826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.74, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1457967955836673016}
   - {fileID: 2439152043098802452}
@@ -208,11 +209,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da6b7a94a55d1743afad502787666e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShipExploded:
+    m_PersistentCalls:
+      m_Calls: []
   speed: 5
   rotationSpeed: 5
-  control: {fileID: 11400000, guid: caa5f803d60e934459ce2972da72d028, type: 2}
+  control: {fileID: -2936862871779645272}
   mainGun: {fileID: 1457967955836673017}
   secondaryGun: {fileID: 2877639680856885707}
+--- !u!114 &-2936862871779645272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457967956547212826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3f28f3ef3e9fd44942d66c89f452a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commands: []
 --- !u!1 &3433991774721849927
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,6 +275,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 5
   capacity: 1
-  gunForce: 20
+  gunForce: 50
   ammoPrefab: {fileID: 5924576147014326752, guid: 62d2d27a7635e5c48a1cc54e0a266bd2,
     type: 3}

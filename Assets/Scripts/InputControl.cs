@@ -29,8 +29,8 @@ public class Command
     }
 }
 
-[CreateAssetMenu(fileName = "CommandsPreset", menuName = "Input", order = 1)]
-public class InputControl : ScriptableObject
+// [CreateAssetMenu(fileName = "CommandsPreset", menuName = "Input", order = 1)]
+public class InputControl : MonoBehaviour
 {
     [SerializeField]
     public List<Command> commands;

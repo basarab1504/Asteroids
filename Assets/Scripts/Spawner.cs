@@ -8,9 +8,9 @@ public class Spawner : MonoBehaviour
     private float cooldown;
     private float lastTickSpawned;
     [SerializeField]
-    private Vector2 areaSize;
+    private Transform areaSize;
     [SerializeField]
-    private Asteroid asteroidPrefab;
+    private GameObject prefabToSpawn;
 
     public void Update()
     {
@@ -23,8 +23,7 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        var a = Instantiate(asteroidPrefab, GetPosition(), Quaternion.identity);
-        a.PushRandom();
+        Instantiate(prefabToSpawn, GetPosition(), Quaternion.identity);
     }
 
     private Vector2 GetPosition()
@@ -32,17 +31,20 @@ public class Spawner : MonoBehaviour
         float x;
         float y;
 
+        var areaSizeX = areaSize.localScale.x * 0.5f;
+        var areaSizeY = areaSize.localScale.y * 0.5f;
+
         bool XoY = Random.Range(0f, 1f) > 0.5f ? true : false;
 
         if (XoY)
         {
-            x = Random.Range(0f, 1f) > 0.5f ? -areaSize.x : areaSize.x;
-            y = Random.Range(-areaSize.y, areaSize.y);
+            x = Random.Range(0f, 1f) > 0.5f ? -areaSizeX : areaSizeX;
+            y = Random.Range(-areaSizeY, areaSizeY);
         }
         else
         {
-            y = Random.Range(0f, 1f) > 0.5f ? -areaSize.y : areaSize.y;
-            x = Random.Range(-areaSize.x, areaSize.x);
+            y = Random.Range(0f, 1f) > 0.5f ? -areaSizeY : areaSizeY;
+            x = Random.Range(-areaSizeX, areaSizeX);
         }
 
         return new Vector2(x, y);

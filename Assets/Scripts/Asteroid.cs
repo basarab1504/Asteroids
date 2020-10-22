@@ -12,7 +12,7 @@ public class Asteroid : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        // direction = (Vector3.zero - transform.position).normalized;
+        PushRandom();
     }
 
     public void Update()

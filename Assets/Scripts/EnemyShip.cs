@@ -18,6 +18,9 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
     private float visibilityRadius;
     [SerializeField]
     private float keepDistance;
+    [SerializeField]
+    private LayerMask aimMask;
+
     private Rigidbody2D rigidbody;
 
 
@@ -44,16 +47,34 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
 
         control.commands.Add(new Command(() =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
             var dir = hit.transform.position - transform.position;
             Move(dir.normalized * speed);
         },
         () =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
             if (hit != null)
                 return (hit.transform.position - transform.position).magnitude > keepDistance;
             return hit != null;
+        }));
+
+        control.commands.Add(new Command(() =>
+        {
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
+            if (Vector3.SignedAngle(transform.up, hit.transform.position - transform.position, Vector3.forward) < 0)
+                Rotate(rigidbody.rotation - rotationSpeed);
+            else
+                Rotate(rigidbody.rotation + rotationSpeed);
+        },
+        () =>
+        {
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
+            if (hit != null)
+            {
+                return Vector3.Angle(transform.up, hit.transform.position - transform.position) >= visibilityAngle;
+            }
+            return false;
         }));
 
         control.commands.Add(new Command(() =>
@@ -62,28 +83,10 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
         },
         () =>
         {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
+            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
             if (hit != null)
                 return (hit.transform.position - transform.position).magnitude > keepDistance;
             return hit != null;
-        }));
-
-        control.commands.Add(new Command(() =>
-        {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
-            if (Vector3.SignedAngle(transform.up, hit.transform.position - transform.position, Vector3.forward) < 0)
-                Rotate(rigidbody.rotation - rotationSpeed);
-            else
-                Rotate(rigidbody.rotation + rotationSpeed);
-        },
-        () =>
-        {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius);
-            if (hit != null)
-            {
-                return Vector3.Angle(transform.up, hit.transform.position - transform.position) >= visibilityAngle;
-            }
-            return false;
         }));
     }
 

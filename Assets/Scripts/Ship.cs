@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Ship : MonoBehaviour, IMovable, IDestroyable
 {
+    public UnityEvent ShipExploded;
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -52,5 +53,6 @@ public class Ship : MonoBehaviour, IMovable, IDestroyable
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy();
+        ShipExploded.Invoke();
     }
 }
