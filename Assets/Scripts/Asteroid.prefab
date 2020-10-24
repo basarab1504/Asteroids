@@ -135,6 +135,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ede52f8d01cb9d4fa61e986ef647648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnExplode:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2245829062931632543, guid: ba0ed12b0704ded4f9e8a1275d8d208a,
+          type: 3}
+        m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   speed: 12
 --- !u!114 &7878505382296294677
 MonoBehaviour:

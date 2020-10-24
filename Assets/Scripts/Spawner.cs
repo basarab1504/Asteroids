@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Factory<T> : MonoBehaviour where T: MonoBehaviour
+{
+    [SerializeField]
+    T prefab;
+
+    T Produce()
+    {
+        return Instantiate(prefab);
+    }
+}
+
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    private float cooldown;
-    private float lastTickSpawned;
+    protected GameObject prefabToSpawn;
     [SerializeField]
-    private Transform areaSize;
-    [SerializeField]
-    private GameObject prefabToSpawn;
-
-    public void Update()
-    {
-        if(Time.time > lastTickSpawned + cooldown)
-        {
-            lastTickSpawned = Time.time;
-            Spawn();
-        }
-    }
+    protected Transform areaSize;
 
     public void Spawn()
     {

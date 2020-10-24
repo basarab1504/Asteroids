@@ -1,36 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
+using System;
+
+[Serializable]
+public class StringEvent : UnityEvent<string>
+{}
 
 public class GameManager : MonoBehaviour
 {
+    public StringEvent ScoreChanged;
+    public UnityEvent GameStarted;
+    public UnityEvent GameOver;
     [SerializeField]
-    private int lifesAmount;
-    private int lifesRemain;
-    [SerializeField]
-    private Ship playerShipPrefab;
-    [SerializeField]
-    private Vector2 shipSpawnPosition;
+    private int score;
 
     private void Start()
     {
-        lifesRemain = lifesAmount;
-        SpawnShip();
+        GameStarted.Invoke();
+    }
+
+    public void AddScore()
+    {
+        score++;
+        ScoreChanged.Invoke(score.ToString());
+        Debug.Log(score);
     }
 
     public void OnShipExploded()
     {
-        if (lifesRemain > 0)
-        {
-            SpawnShip();
-            lifesRemain--;
-        }
+        GameOver.Invoke();
     }
 
-    public Ship SpawnShip()
+    public void OnGameRestart()
     {
-        var ship = Instantiate(playerShipPrefab, shipSpawnPosition, Quaternion.identity);
-        ship.ShipExploded.AddListener(OnShipExploded);
-        return ship;
+        GameStarted.Invoke();
     }
 }

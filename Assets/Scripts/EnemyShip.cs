@@ -1,17 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
+public class EnemyShip : Ship
 {
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float rotationSpeed;
-    [SerializeField]
-    private InputControl control;
-    [SerializeField]
-    private Gun gun;
     [SerializeField]
     private float visibilityAngle;
     [SerializeField]
@@ -21,82 +14,30 @@ public class EnemyShip : MonoBehaviour, IMovable, IDestroyable
     [SerializeField]
     private LayerMask aimMask;
 
-    private Rigidbody2D rigidbody;
-
-
-    public void Move(Vector3 direction)
+    private void HandleCommand()
     {
-        rigidbody.AddForce(direction);
-    }
-
-    public void Rotate(float angle)
-    {
-        rigidbody.MoveRotation(angle);
-    }
-
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
-
-    private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody2D>();
-
-        control.commands = new List<Command>();
-
-        control.commands.Add(new Command(() =>
+        var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
+        if (hit != null)
         {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
-            var dir = hit.transform.position - transform.position;
-            Move(dir.normalized * speed);
-        },
-        () =>
-        {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
-            if (hit != null)
-                return (hit.transform.position - transform.position).magnitude > keepDistance;
-            return hit != null;
-        }));
+            if ((hit.transform.position - transform.position).magnitude > keepDistance)
+                mainGun.Shoot();
 
-        control.commands.Add(new Command(() =>
-        {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
-            if (Vector3.SignedAngle(transform.up, hit.transform.position - transform.position, Vector3.forward) < 0)
-                Rotate(rigidbody.rotation - rotationSpeed);
-            else
-                Rotate(rigidbody.rotation + rotationSpeed);
-        },
-        () =>
-        {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
-            if (hit != null)
+            float signedAngle = Vector3.SignedAngle(transform.up, hit.transform.position - transform.position, Vector3.forward);
+            if (signedAngle >= visibilityAngle)
             {
-                return Vector3.Angle(transform.up, hit.transform.position - transform.position) >= visibilityAngle;
+                Rotate(rigidbody.rotation + rotationSpeed * Mathf.Sign(signedAngle));
             }
-            return false;
-        }));
 
-        control.commands.Add(new Command(() =>
-        {
-            gun.Shoot();
-        },
-        () =>
-        {
-            var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
-            if (hit != null)
-                return (hit.transform.position - transform.position).magnitude > keepDistance;
-            return hit != null;
-        }));
+            var dir = hit.transform.position - transform.position;
+            if (dir.magnitude > keepDistance)
+            {
+                Move(dir.normalized * speed);
+            }
+        }
     }
 
-    private void Update()
-    {
-        control.HandleCommands();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy();
-    }
+    // private void Update()
+    // {
+    //     control.HandleCommands();
+    // }
 }

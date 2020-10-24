@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Asteroid : MonoBehaviour
 {
+    public UnityEvent OnExplode;
     private Rigidbody2D rigidbody;
     private Vector3 direction;
     [SerializeField]
@@ -23,6 +25,7 @@ public class Asteroid : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+        OnExplode.Invoke();
     }
 
     public void Push(Vector2 direction)
@@ -34,6 +37,6 @@ public class Asteroid : MonoBehaviour
     {
         var x = Random.Range(0f, 1f) > 0.5f ? -1f : 1f;
         var y = Random.Range(0f, 1f) > 0.5f ? -1f : 1f;
-        direction = new Vector2(x, y);
+        Push(new Vector2(x, y));
     }
 }
