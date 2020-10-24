@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 3
   capacity: 6
-  gunForce: 10
+  gunForce: 15
   ammoPrefab: {fileID: 1084287647570182018, guid: 84bfb36d87a4366408864f33fbac2d42,
     type: 3}
 --- !u!1 &1457967956547212826
@@ -255,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3433991774721849927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1457967956547212822}

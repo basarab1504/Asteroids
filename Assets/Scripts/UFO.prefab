@@ -214,7 +214,7 @@ MonoBehaviour:
   gun: {fileID: 8766119184712452027}
   visibilityAngle: 50
   visibilityRadius: 25
-  keepDistance: 3
+  keepDistance: 5
   aimMask:
     serializedVersion: 2
     m_Bits: 1024
