@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public StringEvent ScoreChanged;
     public UnityEvent GameStarted;
     public UnityEvent GameOver;
-    [SerializeField]
+    
     private int score;
 
     private void Start()
@@ -26,10 +26,9 @@ public class GameManager : MonoBehaviour
     {
         score++;
         ScoreChanged.Invoke(score.ToString());
-        Debug.Log(score);
     }
 
-    public void OnShipExploded()
+    public void OnGameOver()
     {
         GameOver.Invoke();
     }

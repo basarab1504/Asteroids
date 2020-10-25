@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 1457967956547212823}
   - component: {fileID: 1457967956547212820}
   - component: {fileID: -3952058435369050827}
+  - component: {fileID: -3506625623674602116}
   m_Layer: 10
   m_Name: Ship
   m_TagString: Player
@@ -213,7 +214,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2245829062931632543, guid: ba0ed12b0704ded4f9e8a1275d8d208a,
           type: 3}
-        m_MethodName: OnShipExploded
+        m_MethodName: OnGameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -227,6 +228,21 @@ MonoBehaviour:
   rotationSpeed: 5
   mainGun: {fileID: 1457967955836673017}
   secondaryGun: {fileID: 2877639680856885707}
+--- !u!114 &-3506625623674602116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457967956547212826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f73cc48ab704fe4c94e8814d47d05e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalDestroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3433991774721849927
 GameObject:
   m_ObjectHideFlags: 0

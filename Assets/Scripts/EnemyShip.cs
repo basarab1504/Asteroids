@@ -14,7 +14,7 @@ public class EnemyShip : Ship
     [SerializeField]
     private LayerMask aimMask;
 
-    private void HandleCommand()
+    protected override void Update()
     {
         var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
         if (hit != null)
@@ -35,9 +35,4 @@ public class EnemyShip : Ship
             }
         }
     }
-
-    // private void Update()
-    // {
-    //     control.HandleCommands();
-    // }
 }

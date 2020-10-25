@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class Asteroid : MonoBehaviour
 {
-    public UnityEvent OnExplode;
     private Rigidbody2D rigidbody;
     private Vector3 direction;
     [SerializeField]
@@ -20,12 +19,6 @@ public class Asteroid : MonoBehaviour
     public void Update()
     {
         rigidbody.MovePosition(transform.position + direction * speed * Time.deltaTime);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-        OnExplode.Invoke();
     }
 
     public void Push(Vector2 direction)

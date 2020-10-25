@@ -1,28 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Factory<T> : MonoBehaviour where T: MonoBehaviour
-{
-    [SerializeField]
-    T prefab;
-
-    T Produce()
-    {
-        return Instantiate(prefab);
-    }
-}
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    protected GameObject prefabToSpawn;
+    protected Armor prefabToSpawn;
     [SerializeField]
     protected Transform areaSize;
-
+    [SerializeField]
+    private GameManager manager;
+    
     public void Spawn()
     {
-        Instantiate(prefabToSpawn, GetPosition(), Quaternion.identity);
+        var obj = Instantiate(prefabToSpawn, GetPosition(), Quaternion.identity);
+        obj.TotalDestroy.AddListener(manager.AddScore);
     }
 
     private Vector2 GetPosition()

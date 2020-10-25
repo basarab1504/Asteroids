@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7878505382296294680}
   - component: {fileID: 7878505382296294677}
   - component: {fileID: -6411337155453506275}
+  - component: {fileID: -2741212803793551258}
   m_Layer: 8
   m_Name: Asteroid
   m_TagString: Untagged
@@ -178,3 +179,18 @@ MonoBehaviour:
   asteroidPrefab: {fileID: 2362017755783688692, guid: 11e810d0c48bfbe41927de8a68f8f1d2,
     type: 3}
   countToSpawn: 3
+--- !u!114 &-2741212803793551258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7878505382296294683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f73cc48ab704fe4c94e8814d47d05e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalDestroy:
+    m_PersistentCalls:
+      m_Calls: []
