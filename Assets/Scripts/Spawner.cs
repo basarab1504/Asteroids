@@ -7,16 +7,13 @@ using UnityEngine.Events;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    protected Armor prefabToSpawn;
+    protected GameObject prefabToSpawn;
     [SerializeField]
     protected Transform areaSize;
-    [SerializeField]
-    private GameManager manager;
     
     public void Spawn()
     {
         var obj = Instantiate(prefabToSpawn, GetPosition(), Quaternion.identity);
-        obj.Destoyed.AddListener(manager.AddScore);
     }
 
     private Vector2 GetPosition()

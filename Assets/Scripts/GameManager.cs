@@ -7,33 +7,38 @@ using System;
 
 [Serializable]
 public class StringEvent : UnityEvent<string>
-{}
+{ }
 
 public class GameManager : MonoBehaviour
 {
-    public StringEvent ScoreChanged;
-    public UnityEvent GameStarted;
-    public UnityEvent GameOver;
+    [SerializeField]
+    private GameEvent GraphicsChanged;
+    [SerializeField]
+    private GameEvent GameStart;
+    [SerializeField]
+    private StringEvent ScoreChanged;
     private int score;
+    private Dimension graphicsState;
 
     private void Start()
     {
-        GameStarted.Invoke();
+        graphicsState = Dimension.dimension2D;
+        GameStart.Raise();
+    }
+
+    public void Restart()
+    {
+        GameStart.Raise();
+    }
+
+    public void ChangeGraphics()
+    {
+        GraphicsChanged.Raise();
     }
 
     public void AddScore()
     {
         score++;
         ScoreChanged.Invoke(score.ToString());
-    }
-
-    public void OnGameOver()
-    {
-        GameOver.Invoke();
-    }
-
-    public void GameRestart()
-    {
-        GameStarted.Invoke();
     }
 }

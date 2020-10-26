@@ -1,16 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Armor : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField]
     private GameEvent Destoyed;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDestroy()
     {
         Destoyed.Raise();
-        Destroy(gameObject);
     }
 }

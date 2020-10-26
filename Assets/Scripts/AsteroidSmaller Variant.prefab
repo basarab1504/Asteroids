@@ -82,6 +82,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidSmaller Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7889586589585185262, guid: 81ff25adebb818245aad13947a5d0c88,
+        type: 3}
+      propertyPath: graphics
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d964ba6f2d9f3e4cb3a21e21805ed23,
+        type: 2}
     m_RemovedComponents:
     - {fileID: -6411337155453506275, guid: 81ff25adebb818245aad13947a5d0c88, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81ff25adebb818245aad13947a5d0c88, type: 3}

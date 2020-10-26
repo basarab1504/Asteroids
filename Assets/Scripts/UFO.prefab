@@ -63,6 +63,7 @@ GameObject:
   - component: {fileID: 8766119185088498262}
   - component: {fileID: 256137875534711382}
   - component: {fileID: -8514048454540287542}
+  - component: {fileID: -6547490031510429575}
   m_Layer: 11
   m_Name: UFO
   m_TagString: Untagged
@@ -208,9 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e26d31fb3cd876448b013933bed03a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShipExploded:
-    m_PersistentCalls:
-      m_Calls: []
   speed: 5
   rotationSpeed: 5
   mainGun: {fileID: 8766119184712452027}
@@ -233,6 +231,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f73cc48ab704fe4c94e8814d47d05e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalDestroy:
-    m_PersistentCalls:
-      m_Calls: []
+  Destoyed: {fileID: 11400000, guid: a489212723e642f4a9774dab18e5ce34, type: 2}
+--- !u!114 &-6547490031510429575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8766119185088498264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42e206ba7b8a9746bd9733112decf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphics: {fileID: 11400000, guid: 614a69f8c70b79347aeb0a4d2306ce73, type: 2}

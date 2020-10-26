@@ -33,8 +33,8 @@ public class Gun : MonoBehaviour
     private void Start()
     {
         ammo = new List<Ammo>();
-        LoadGun();
         ammoShotTicks = new Queue<float>();
+        LoadGun();
     }
 
     void Update()
@@ -63,5 +63,11 @@ public class Gun : MonoBehaviour
                 ammoShotTicks.Dequeue();
             }
         }
+    }
+
+    private void OnDestoy()
+    {
+        foreach(var b in ammo)
+            Destroy(b.gameObject);
     }
 }

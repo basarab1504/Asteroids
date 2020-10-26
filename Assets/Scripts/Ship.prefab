@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1457967955836673016}
-  - component: {fileID: 1457967955836673017}
+  - component: {fileID: 5682589005414431033}
   m_Layer: 10
   m_Name: Turret
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 1457967956547212822}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1457967955836673017
+--- !u!114 &5682589005414431033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 3
   capacity: 6
-  gunForce: 15
-  ammoPrefab: {fileID: 1084287647570182018, guid: 84bfb36d87a4366408864f33fbac2d42,
+  gunForce: 20
+  ammoPrefab: {fileID: 263976240949184344, guid: 84bfb36d87a4366408864f33fbac2d42,
     type: 3}
 --- !u!1 &1457967956547212826
 GameObject:
@@ -63,6 +63,9 @@ GameObject:
   - component: {fileID: 1457967956547212820}
   - component: {fileID: -3952058435369050827}
   - component: {fileID: -3506625623674602116}
+  - component: {fileID: 8864696983311932154}
+  - component: {fileID: 8609014601298606930}
+  - component: {fileID: 576478178674385160}
   m_Layer: 10
   m_Name: Ship
   m_TagString: Player
@@ -209,24 +212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da6b7a94a55d1743afad502787666e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShipExploded:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2245829062931632543, guid: ba0ed12b0704ded4f9e8a1275d8d208a,
-          type: 3}
-        m_MethodName: OnGameOver
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   speed: 5
   rotationSpeed: 5
-  mainGun: {fileID: 1457967955836673017}
+  mainGun: {fileID: 5682589005414431033}
   secondaryGun: {fileID: 2877639680856885707}
 --- !u!114 &-3506625623674602116
 MonoBehaviour:
@@ -240,9 +228,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f73cc48ab704fe4c94e8814d47d05e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalDestroy:
+  Destoyed: {fileID: 11400000, guid: a489212723e642f4a9774dab18e5ce34, type: 2}
+--- !u!114 &8864696983311932154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457967956547212826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42e206ba7b8a9746bd9733112decf8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphics: {fileID: 11400000, guid: de6d9a7efe2d7f6448fc058bbd499041, type: 2}
+  actualDimension: 0
+--- !u!114 &8609014601298606930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457967956547212826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9df0070bcd04e8479f29b90791ede97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destoyed: {fileID: 11400000, guid: 0a81b99f3030fa844b5e882def238211, type: 2}
+--- !u!114 &576478178674385160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457967956547212826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e9abb742399e544864abce865a19ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 51d2c3fa590a5dc4988af353e9109477, type: 2}
+  Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8864696983311932154}
+        m_MethodName: ChangeGraphics
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3433991774721849927
 GameObject:
   m_ObjectHideFlags: 0
