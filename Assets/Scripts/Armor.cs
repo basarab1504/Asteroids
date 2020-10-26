@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class Armor : MonoBehaviour
 {
-    public UnityEvent TotalDestroy;
+    public UnityEvent Destoyed;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        TotalDestroy.Invoke();
+        Destoyed.Invoke();
     }
 }

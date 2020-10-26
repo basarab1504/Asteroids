@@ -8,44 +8,59 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private float cooldown;
     [SerializeField]
-    private float capacity;
-    private float ammoCount;
+    private int capacity;
+    private int ammoCount;
+    private List<Ammo> ammo;
     [SerializeField]
     private float gunForce;
     [SerializeField]
     private Ammo ammoPrefab;
-    private Queue<float> ammosShotTicks;
+    private Queue<float> ammoShotTicks;
 
     public void Shoot()
     {
         if (ammoCount > 0)
         {
-            var ammo = Instantiate(ammoPrefab, transform.position, Quaternion.identity);
-            ammo.Shoot(transform.up.normalized, gunForce);
+            var currentAmmo = ammo[capacity - ammoCount];
+            currentAmmo.transform.position = transform.position;
+            currentAmmo.gameObject.SetActive(true);
+            currentAmmo.Shoot(transform.up.normalized, gunForce);
             ammoCount--;
-            ammosShotTicks.Enqueue(Time.time);
+            ammoShotTicks.Enqueue(Time.time);
         }
     }
 
     private void Start()
     {
-        ammoCount = capacity;
-        ammosShotTicks = new Queue<float>();
+        ammo = new List<Ammo>();
+        LoadGun();
+        ammoShotTicks = new Queue<float>();
     }
 
     void Update()
     {
-        AmmoRestoring();
+        GunReloading();
     }
 
-    private void AmmoRestoring()
+    private void LoadGun()
+    {
+        for (int i = 0; i < capacity; i++)
+        {
+            var ammo = Instantiate(ammoPrefab, transform.position, Quaternion.identity);
+            ammo.gameObject.SetActive(false);
+            this.ammo.Add(ammo);
+            ammoCount++;
+        }
+    }
+
+    private void GunReloading()
     {
         if (ammoCount < capacity)
         {
-            if (Time.time > ammosShotTicks.Peek() + cooldown)
+            if (Time.time > ammoShotTicks.Peek() + cooldown)
             {
                 ammoCount++;
-                ammosShotTicks.Dequeue();
+                ammoShotTicks.Dequeue();
             }
         }
     }

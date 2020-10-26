@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public StringEvent ScoreChanged;
     public UnityEvent GameStarted;
     public UnityEvent GameOver;
-    
     private int score;
 
     private void Start()
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
         GameOver.Invoke();
     }
 
-    public void OnGameRestart()
+    public void GameRestart()
     {
         GameStarted.Invoke();
     }

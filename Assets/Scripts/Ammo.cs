@@ -9,22 +9,22 @@ public class Ammo : MonoBehaviour
     private float lifetime;
     private Rigidbody2D rigidbody;
 
-    public void Awake()
-    {
-        bornTick = Time.time;
-        rigidbody = GetComponent<Rigidbody2D>();
-    }
-
     public void Update()
     {
         if (Time.time > bornTick + lifetime)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
     public void Shoot(Vector3 direction, float force)
     {
+        bornTick = Time.time;
         rigidbody.AddForce(direction * force, ForceMode2D.Impulse);
+    }
+
+    private void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 }

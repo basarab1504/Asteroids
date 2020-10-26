@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
         var obj = Instantiate(prefabToSpawn, GetPosition(), Quaternion.identity);
-        obj.TotalDestroy.AddListener(manager.AddScore);
+        obj.Destoyed.AddListener(manager.AddScore);
     }
 
     private Vector2 GetPosition()
