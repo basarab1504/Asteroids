@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class StringEvent : UnityEvent<string>
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        GameStart.Raise();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ChangeGraphics()
