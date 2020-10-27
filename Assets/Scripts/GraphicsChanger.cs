@@ -13,27 +13,36 @@ public class GraphicsChanger : MonoBehaviour
     [SerializeField]
     private GraphicsAlternative graphics;
     [SerializeField]
-    private Dimension actualDimension;
+    private GraphicsSettings settings;
 
-    public void ChangeGraphics()
+    private void Start()
     {
-        if (actualDimension == Dimension.dimension3D)
-        {
-            DestroyImmediate(gameObject.GetComponent<MeshFilter>());
-            DestroyImmediate(gameObject.GetComponent<MeshRenderer>());
-            var c = gameObject.AddComponent<SpriteRenderer>();
-            c.sprite = graphics.sprite;
-            c.color = graphics.color;
-            actualDimension = Dimension.dimension2D;
-        }
+        if (NeedsToChangeGraphics())
+            ChangeGraphics();
+    }
+
+    private bool NeedsToChangeGraphics()
+    {
+        if (settings.graphicsDimension == Dimension.dimension3D)
+            return GetComponent<MeshRenderer>() == null;
         else
+            return GetComponent<SpriteRenderer>() == null;
+    }
+
+    private void ChangeGraphics()
+    {
+        if (settings.graphicsDimension == Dimension.dimension3D)
         {
             DestroyImmediate(gameObject.GetComponent<SpriteRenderer>());
             gameObject.AddComponent<MeshFilter>().mesh = graphics.mesh;
-            var c = gameObject.AddComponent<MeshRenderer>();
-            c.material = graphics.material;
-            c.material.SetColor("_Color", graphics.color);
-            actualDimension = Dimension.dimension3D;
+            gameObject.AddComponent<MeshRenderer>().material = graphics.material;
+        }
+        else
+        {
+            DestroyImmediate(gameObject.GetComponent<MeshFilter>());
+            DestroyImmediate(gameObject.GetComponent<MeshRenderer>());
+            gameObject.AddComponent<SpriteRenderer>().sprite = graphics.sprite;
+            gameObject.GetComponent<SpriteRenderer>().color = graphics.color;
         }
     }
 }

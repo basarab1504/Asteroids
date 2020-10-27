@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private StringEvent ScoreChanged;
     private int score;
-    private Dimension graphicsState;
+    [SerializeField]
+    private GraphicsSettings settings;
 
     private void Start()
     {
-        graphicsState = Dimension.dimension2D;
         GameStart.Raise();
     }
 
@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
 
     public void ChangeGraphics()
     {
+        if (settings.graphicsDimension == Dimension.dimension2D)
+            settings.graphicsDimension = Dimension.dimension3D;
+        else
+            settings.graphicsDimension = Dimension.dimension2D;
         GraphicsChanged.Raise();
     }
 
