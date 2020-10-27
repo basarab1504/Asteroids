@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Ammo">
+    <Position X="4.75" Y="7.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAABAAEA=</HashCode>
+      <FileName>Assets\Scripts\Ammo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AreaClamper" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AreaClamper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Armor" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Asteroid" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAQIAAAAAAAAAAAAAAAAQAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\Asteroid.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AsteroidDestroyer" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAADACAAAAAAAAAAAIAAAAAAAAAAAQAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AsteroidDestroyer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CooldownSpawner">
+    <Position X="4.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\CooldownSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bullet">
+    <Position X="4.75" Y="10.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DestroyableAmmo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyShip">
+    <Position X="9" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAAAQAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\EnemyShip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEvent" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAIAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEvent&lt;T&gt;" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameEventListener" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAABAAAAAgAAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\GameEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StringEvent" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACBCAAAAAAgIAABAAACAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GraphicsAlternative" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAACAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\GraphicsAlternative.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GraphicsChanger" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAGAAAAAAAAgAAAAAAACAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GraphicsChanger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GraphicsSettings" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GraphicsSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gun" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAADAgBCAAQAKAAAAAACEAAIAAAAAAAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Gun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ship">
+    <Position X="8.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAKAAAAAAAAAAAAAAEAAAAQAAAAJQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spawner">
+    <Position X="4.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Spawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextListener" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TextListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Dimension" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GraphicsChanger.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

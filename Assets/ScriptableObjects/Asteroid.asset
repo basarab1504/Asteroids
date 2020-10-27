@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f7add7e03e232e4c8434512f4f9dc72, type: 3}
-  m_Name: UFO
+  m_Name: Asteroid
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 56011d5ad5654074da74492d239d433c, type: 3}
-  color: {r: 0.0014921427, g: 1, b: 0, a: 0}
-  mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 21300000, guid: 4834f235f5358f94a8a0ce8d0b698a71, type: 3}
+  color: {r: 0.5754717, g: 0.33579952, b: 0.1981577, a: 1}
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: 191b9905a1c6b21418c1d595044c8633, type: 2}
