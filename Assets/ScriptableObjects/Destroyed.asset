@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e909a3d05934ae428150b15e770c085, type: 3}
   m_Name: Destroyed
   m_EditorClassIdentifier: 
-  listeners: []
