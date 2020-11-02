@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Asteroids;
 
 public class EnemyShip : Ship
 {
@@ -14,13 +15,13 @@ public class EnemyShip : Ship
     [SerializeField]
     private LayerMask aimMask;
 
-    protected override void Update()
+    private void Update()
     {
         var hit = Physics2D.OverlapCircle(transform.position, visibilityRadius, aimMask);
         if (hit != null)
         {
             if ((hit.transform.position - transform.position).magnitude > keepDistance)
-                mainGun.Shoot();
+                guns[0].Shoot(new Coordinates3D(transform.up.x, transform.up.y, transform.up.z));
 
             float signedAngle = Vector3.SignedAngle(transform.up, hit.transform.position - transform.position, Vector3.forward);
             if (signedAngle >= visibilityAngle)
@@ -31,7 +32,8 @@ public class EnemyShip : Ship
             var dir = hit.transform.position - transform.position;
             if (dir.magnitude > keepDistance)
             {
-                Move(dir.normalized * speed);
+                var dirNorm = dir.normalized * speed;
+                Move(new Coordinates3D(dirNorm.x, dirNorm.y, dirNorm.z));
             }
         }
     }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457967955836673016}
   - component: {fileID: 5682589005414431033}
+  - component: {fileID: 437771804318301786}
   m_Layer: 10
   m_Name: Turret
   m_TagString: Untagged
@@ -43,11 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfbcd0b5ea6b2f4fb8408dbaa0ba589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
-  capacity: 6
-  gunForce: 20
-  ammoPrefab: {fileID: 263976240949184344, guid: 84bfb36d87a4366408864f33fbac2d42,
-    type: 3}
+  force: 25
+  ammoBox: {fileID: 437771804318301786}
+--- !u!114 &437771804318301786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457967955836673019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc087069571691f44b5d2c45b368d54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 263976240949184344, guid: 84bfb36d87a4366408864f33fbac2d42, type: 3}
+  bulletsCount: 10
 --- !u!1 &1457967956547212826
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +175,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotationSpeed: 5
-  mainGun: {fileID: 5682589005414431033}
-  secondaryGun: {fileID: 2877639680856885707}
+  guns:
+  - {fileID: 5682589005414431033}
+  - {fileID: 2877639680856885707}
 --- !u!114 &-3506625623674602116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2439152043098802452}
   - component: {fileID: 2877639680856885707}
+  - component: {fileID: 5871922563168820751}
   m_Layer: 10
   m_Name: Turret (1)
   m_TagString: Untagged
@@ -275,8 +289,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfbcd0b5ea6b2f4fb8408dbaa0ba589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 5
-  capacity: 1
-  gunForce: 50
-  ammoPrefab: {fileID: 5924576147014326752, guid: 62d2d27a7635e5c48a1cc54e0a266bd2,
-    type: 3}
+  force: 25
+  ammoBox: {fileID: 5871922563168820751}
+--- !u!114 &5871922563168820751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433991774721849927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc087069571691f44b5d2c45b368d54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5924576147014326752, guid: 62d2d27a7635e5c48a1cc54e0a266bd2, type: 3}
+  bulletsCount: 5

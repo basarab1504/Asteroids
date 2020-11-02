@@ -5,7 +5,9 @@ namespace Asteroids
 {
     public interface IAmmoBox
     {
-        IEnumerable<IAmmo> Ammos { get; }
-        void Reload();
+        int Capacity { get; }
+        // IEnumerable<IAmmo> Ammos { get; }
+        IAmmo GetAmmo();
+        // void Reload();
     }
 }

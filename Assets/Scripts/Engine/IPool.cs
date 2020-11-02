@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace Asteroids
 {
-    public interface IPool
+    public interface IPool<T> where T : IPoolable
     {
-        IEnumerable<IPoolable> Poolables { get; }
+        IEnumerable<T> Poolables { get; }
+        T GetPoolable();
+        // void Release(T poolable);
     }
 }
