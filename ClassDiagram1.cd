@@ -1,199 +1,154 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Class Name="Ammo">
-    <Position X="4.75" Y="5" Width="3" />
+    <Position X="4.75" Y="7.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAQIAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAABAAEA=</HashCode>
       <FileName>Assets\Scripts\Ammo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AreaClamper" Collapsed="true">
-    <Position X="21.75" Y="0.5" Width="1.5" />
+    <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\AreaClamper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Armor">
-    <Position X="6.5" Y="16.5" Width="3.25" />
+  <Class Name="Armor" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAgAAAAA=</HashCode>
       <FileName>Assets\Scripts\Armor.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="Destoyed" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="Asteroid">
-    <Position X="16.75" Y="20.75" Width="2.25" />
+  <Class Name="Asteroid" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQIAAAAAAAQIAAAAAAAAAAAAAAAAQAAAAAAAAAACEA=</HashCode>
       <FileName>Assets\Scripts\Asteroid.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AsteroidDestroyer">
-    <Position X="16.25" Y="17.5" Width="3.25" />
+  <Class Name="AsteroidDestroyer" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAADACAAAAAAAAAAAIAAAAAAAAAAAQAgAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\AsteroidDestroyer.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="debrisPrefab" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Field Name="debris" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="CooldownSpawner">
-    <Position X="4.75" Y="12.75" Width="2" />
+    <Position X="4.75" Y="3.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Assets\Scripts\CooldownSpawner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Bullet">
-    <Position X="4.75" Y="8.25" Width="3.25" />
+    <Position X="4.75" Y="10.75" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\DestroyableAmmo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="EnemyShip">
-    <Position X="10" Y="8.5" Width="1.75" />
+    <Position X="9" Y="4.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>CAQAAAAAAAQAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\EnemyShip.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameEvent">
-    <Position X="10.25" Y="13.25" Width="3.5" />
+  <Class Name="GameEvent" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAIAAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Assets\Scripts\GameEvent.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Field Name="listeners" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="GameEvent&lt;T&gt;" Collapsed="true">
-    <Position X="23.5" Y="0.5" Width="1.5" />
+    <Position X="13.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GameEvent.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameEventListener">
-    <Position X="11" Y="16.25" Width="2" />
+  <Class Name="GameEventListener" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAAABAAAAAgAAAAAIAAAAAAAACAA=</HashCode>
       <FileName>Assets\Scripts\GameEventListener.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="Response" />
-      <Field Name="Event" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="StringEvent">
-    <Position X="12.75" Y="8" Width="1.5" />
+  <Class Name="StringEvent" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GameManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameManager">
-    <Position X="13" Y="10" Width="2" />
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAACBCAAAAAAgIAABAAACAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GameManager.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="GameStart" />
-      <Field Name="GraphicsChanged" />
-      <Field Name="ScoreChanged" />
-      <Field Name="settings" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="GraphicsAlternative">
-    <Position X="18.25" Y="6.75" Width="1.75" />
+  <Class Name="GraphicsAlternative" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAACAAAAAAABAAAA=</HashCode>
       <FileName>Assets\Scripts\GraphicsAlternative.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GraphicsChanger">
-    <Position X="18.25" Y="9.75" Width="2.5" />
+  <Class Name="GraphicsChanger" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAGAAAAAAAAgAAAAAAACAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GraphicsChanger.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="settings" />
-      <Field Name="graphics" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="GraphicsSettings">
-    <Position X="15.75" Y="10" Width="1.5" />
+  <Class Name="GraphicsSettings" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GraphicsSettings.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="graphicsDimension" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="Gun">
-    <Position X="7.25" Y="0.5" Width="2.5" />
+  <Class Name="Gun" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAQAAAAAADAgBCAAQAKAAAAAACEAAIAAAAAAAAAgAAA=</HashCode>
       <FileName>Assets\Scripts\Gun.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="ammoPrefab" />
-    </ShowAsAssociation>
-    <ShowAsCollectionAssociation>
-      <Field Name="ammo" />
-    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Player">
-    <Position X="15.25" Y="13.5" Width="1.75" />
+  <Class Name="Player" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Assets\Scripts\Player.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="Destoyed" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Ship">
-    <Position X="9.75" Y="5" Width="2.25" />
+    <Position X="8.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQIAAAAAKAAAAAAAAAAAAAAEAAAAQAAAAJQAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Ship.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="secondaryGun" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Spawner">
-    <Position X="4.75" Y="10" Width="2.25" />
+    <Position X="4.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAABAAACAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Spawner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TextListener" Collapsed="true">
-    <Position X="21.75" Y="1.5" Width="1.5" />
+    <Position X="15.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAA=</HashCode>
       <FileName>Assets\Scripts\TextListener.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="UnityEngine.Events.UnityEvent" Collapsed="true">
-    <Position X="10.75" Y="18.75" Width="1.5" />
-    <TypeIdentifier />
-  </Class>
-  <Enum Name="Dimension">
-    <Position X="15.75" Y="7" Width="1.5" />
+  <Enum Name="Dimension" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\GraphicsChanger.cs</FileName>
